@@ -29,6 +29,7 @@ $("input#submit-btn").click(function (event) {
 });
 
 //About Page
+const aboutParagraph = "";
 
 //Index
 //
@@ -43,5 +44,16 @@ const outputParagraph = document.getElementById("outputParagraph");
 outputParagraph.textContent = welcomeParagraph;
 
 //Product
+const productParagraph = "";
 
 //Services
+const serviceObj = "I am very experienced in Object Oriented Programming, and doing object oriented programming with multiple different languages such as C#, or Java.";
+const serviceSQL = "I am well versed in SQL, and databse design in general. I am aware of the various different database design rules, CRUD, and implementing a database in different coding language interfaces.";
+const serviceSystemDev = "I am very knowledgable how system development, mainly the SDLC lifecycle, and the contents of each part of the cycle and how it affects the creation of web applications.";
+
+const outputSeriveParagraph1 = document.getElementById("serviceParagraph1");
+outputSeriveParagraph1.textContent = serviceObj;
+
+const serviceObjImage = document.getElementById('ObjImage');
+  const ObjImageUrl = './images/whatis-object_oriented_programming_half_column_mobile.jpg';
+  serviceObjImage.style.image = `url('${ObjImageUrl}')`;
