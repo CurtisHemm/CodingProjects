@@ -9,7 +9,7 @@ Cover is used to cover the entire screen in that image
 }
 
 body {
-    background-color: gray;
+    background-color: gray !important;
 }
 
 .navbar-nav .nav-item {
@@ -21,7 +21,7 @@ body {
     align-items: center;
 }
 .image {
-    width: 40%; 
+    width: 30%; 
 }
 
 .serviceText {
