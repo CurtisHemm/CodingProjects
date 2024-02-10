@@ -1,58 +1,212 @@
 //Curtis Hemminghaus, 100874539, 2024-02-06
+// Create the nav element
+
+// Creation of Human resources link
+// Creating li element
+var li = document.createElement('li');
+li.className = 'nav-item';
+// Creating anchor element
+var aNavLink = document.createElement('a');
+// Setting values for anchor elements
+aNavLink.className = 'nav-link';
+aNavLink.href = './humanResources.html'; 
+aNavLink.textContent = 'Human Resources'; 
+// Appending anchor to list
+li.appendChild(aNavLink);
+// Get the navbar element
+var navbarNav = document.querySelector('.navbar-nav');
+// Inserting the li list before the last element
+navbarNav.insertBefore(li, navbarNav.lastElementChild);
+
+// Creation of the bottom navbar for the copyright text 
+//Creating the nav element
+var nav = document.createElement('nav');
+// Setting the classname for nav
+nav.className = 'navbar fixed-bottom navbar-light bg-light';
+// Creating the div element
+var div = document.createElement('div');
+// Setting the classname for the div
+div.className = 'container-fluid';
+// Creating the navbar-brand  element
+var aNavbar = document.createElement('a');
+// Setting the classname and the text content of the navbar brand
+aNavbar.className = 'navbar-brand';
+aNavbar.textContent = '© CopyRight 2024';
+// Appending the navbarBrand to the div
+div.appendChild(aNavbar);
+// Appending the div to the nav
+nav.appendChild(div);
+// Appending the nav to the body
+document.body.appendChild(nav);
+
+// Changing the the services to interests
+var servicesNavText = document.querySelector('a.nav-link[href="./services.html"]');
+servicesNavText.textContent = 'Interests';
 
 //Contact Script
+// If the user is on the contact page
 if (window.location.pathname == "/contact.html") {
-  const form = $("form");
+  // Creating the contact title
+  const contactTitle = "Contact Us";
+  const contactTitleId = document.getElementById('contactTitle');
+  contactTitleId.textContent = contactTitle;
 
-  console.log(form);
 
-  let firstNameInput = $("input#first_name").val().trim();
-  let lastNameInput = $("input#last_name").val().trim();
-  let phoneInput = $("input#phone_num").val().trim();
-  let emailInput = $("input#email_address").val().trim();
-  let messageInput = $("textarea#message").val().trim();
-
+  // Function for when the button is clicked, output all the user inputs in the console log
   $("input#submit-btn").click(function (event) {
     event.preventDefault();
-    console.log(firstNameInput.value);
-    console.log(lastNameInput.value);
-    console.log(phoneInput.value);
-    console.log(emailInput.value);
-    console.log(messageInput.value);
     const myFormArray = $("form")[0].elements;
     for (let input of myFormArray) {
       console.log(input.value);
     }
 
+    // After button is clicked, send the user back to the index in 3 seconds
     setTimeout(function () {
       window.location.href = "index.html";
     }, 3000);
   });
 }
 //About Page
-const aboutParagraph = "";
+// If the user is on the about page
+if (window.location.pathname == "/about.html"){
+
+  // Storing the paragraph contents
+  const profileParagraph = "My name is Curtis Hemminghaus. I am in the Computer Programming & Analysis Course at Durham College. Currently in my 4th semester, looking for a co-op job position in the summer."
+  const aboutParagraph1 = "I do alot of indoor activites during my freetime. Usually more when I'm back in Vaughan and going to the community center where I would swim and use their gym.";
+  const aboutParagraph2 = "One of my favourite hobbies is riding my bike back home through the forest, ravines, and near ponds. ";
+  const aboutParagraph3 = "I volunteered quite a bit during highschool. One of the places I always tried volunteering to every year was the Richmond Hill Winter Carnival where I would set up stations, and help cook with police officers who also volunteered.";
+
+  // Storing the header contents
+  const profileHeader = "Who am I?"
+  const aboutHeader1 = "Indoor Activites";
+  const aboutHeader2 = "Biking";
+  const aboutHeader3 = "Volunteer Work";
+
+  // Storing image urls
+  const profileImageUrl = "./images/Screenshot 2024-02-09 220718.jpg.png";
+  const velloreImageURL = "./images/VVCCbanner.jpg";
+  const bikeImageURL = "./images/download (2).jpg";
+  const richmondImageURL = "./images/richmond.jpg";
+
+  // Storing id of about paragraphs
+  const aboutProfileImage = document.getElementById('profileImage');
+  const aboutVelloreImage = document.getElementById('velloreImage');
+  const aboutBikeImage = document.getElementById('bikeImage');
+  const aboutRichmondImage = document.getElementById('richmondImage');
+
+  // Storing id of headers
+  const outputAboutProfileHeader = document.getElementById('profileHeader');
+  const outputAboutHeader1 = document.getElementById('aboutHeader1');
+  const outputAboutHeader2 = document.getElementById('aboutHeader2');
+  const outputAboutHeader3 = document.getElementById('aboutHeader3');
+
+  // Storing id of paragraphs
+  const outputAboutProfileParagraph = document.getElementById('profileParagraph');
+  const outputAboutParagraph1 = document.getElementById('aboutParagraph1');
+  const outputAboutParagraph2 = document.getElementById('aboutParagraph2');
+  const outputAboutParagraph3 = document.getElementById('aboutParagraph3');
+
+  // Setting the text content of the headers
+  outputAboutProfileHeader.textContent = profileHeader;
+  outputAboutHeader1.textContent = aboutHeader1;
+  outputAboutHeader2.textContent = aboutHeader2;
+  outputAboutHeader3.textContent = aboutHeader3;
+
+  // Setting the source of the images
+  aboutProfileImage.src = profileImageUrl;
+  aboutVelloreImage.src = velloreImageURL;
+  aboutBikeImage.src = bikeImageURL;
+  aboutRichmondImage.src = richmondImageURL;
+
+  // Setting the text content of the paragraphs
+  outputAboutProfileParagraph.textContent = profileParagraph;
+  outputAboutParagraph1.textContent = aboutParagraph1;
+  outputAboutParagraph2.textContent = aboutParagraph2;
+  outputAboutParagraph3.textContent = aboutParagraph3;
+}
+
 
 //Index
+// If the user is on the index page
 if (window.location.pathname == "/index.html") {
+  // Storing the id of the background image
+  const elementWithBackground = document.getElementById('elementWithBackground');
 
-const elementWithBackground = document.getElementById('elementWithBackground');
-    const imageUrl = './images/3cbf62f070f0b69ed686253dda39b3fd3610ccb4.jpg'; 
-    
-    elementWithBackground.style.backgroundImage = `url('${imageUrl}')`;
+  // Storing the id of the index paragraph 
+  const outputParagraph = document.getElementById("outputParagraph");
 
-const welcomeParagraph = "Welcome to Curtis Hemminghaus' website!";
+  // Storing the image url of the background image
+  const imageUrl = './images/3cbf62f070f0b69ed686253dda39b3fd3610ccb4.jpg'; 
 
-const outputParagraph = document.getElementById("outputParagraph");
-outputParagraph.textContent = welcomeParagraph;
+  // Storing the welcome message
+  const welcomeParagraph = "Welcome to Curtis Hemminghaus' website!";
+
+  // Setting the background image with the url
+  elementWithBackground.style.backgroundImage = `url('${imageUrl}')`;
+
+  // Setting the text content of the welcome paragraph 
+  outputParagraph.textContent = welcomeParagraph;
 }
 
 //Product
+// If the user is on the product page
 if (window.location.pathname == "/product.html"){
-  const productParagraph = "";
+  // Constants for product headers
+  const stardewHeader = "Stardew Valley";
+  const redDeadHeader = "Red Dead Redemption 2";
+  const trashHeader = "Trash Taste";
+
+  // Constants for product paragraphs
+  const productStardew = "Among 3 of my favourite pieces of media, I have stardew valley as my favourite game of all time. I have over 500 hours on steam on Stardew, every achievement, and I believe it to be one of the prime examples of a really good indie games.";
+  const productRedDead = "I'd say Red Dead Redemption 2 is my second favourite game. I have 100 hours, and it has the best video game story I've ever played. Once I complete my school year, I do plan on getting back into it to collect all the upgrades.";
+  const productTrash = "I liked to listen to a lot of podcasts as I strangely work better when having people talk around me. Trash taste is my favourite podcast group as their group dynamic is very enjoyable to listen to.";
+
+  // Constants for string url of product images
+  const stardewImageUrl = "./images/Stardew-Valley-promotional-image-Sourcewwwstardewvalleynet-Image-copyright-Eric-Barone.jpg";
+  const redDeadImageUrl = "./images/Red_Dead_Redemption_II.jpg";
+  const trashImageUrl = "./images/trash.jpg";
+
+  // Storing the id of the images
+  const productStardewImage = document.getElementById('stardewImage');
+  const productRedDeadImage = document.getElementById('redDeadImage');
+  const productTrashImage = document.getElementById('trashImage');
+
+  // Storing the id of the paragraphs
+  const outputProductParagraph1 = document.getElementById('productParagraph1');
+  const outputProductParagraph2 = document.getElementById('productParagraph2');
+  const outputProductParagraph3 = document.getElementById('productParagraph3');
+
+  // Storing the id of the header
+  const outputProductHeader1 = document.getElementById('productHeader1');
+  const outputProductHeader2 = document.getElementById('productHeader2');
+  const outputProductHeader3 = document.getElementById('productHeader3');
+
+  // Setting the image source with the image urls
+  productStardewImage.src = stardewImageUrl;
+  productRedDeadImage.src = redDeadImageUrl;
+  productTrashImage.src = trashImageUrl;
+
+  // Setting the text content of the headers
+  outputProductHeader1.textContent = stardewHeader;
+  outputProductHeader2.textContent = redDeadHeader;
+  outputProductHeader3.textContent = trashHeader;
+
+  // Setting the text content of the paragraphs
+  outputProductParagraph1.textContent = productStardew;
+  outputProductParagraph2.textContent = productRedDead;
+  outputProductParagraph3.textContent = productTrash;
+
 }
 
 //Services
+// If the user is on the service page
 if (window.location.pathname == "/services.html") {
+  //Resume link creation
+  const resumeId = document.getElementById('resumeLink');
+  const resumeTitle = document.getElementById('resumeTitle');
+  const resumeUrl = "https://docs.google.com/document/d/1dz36SlzaqTWiWmZPAwB6x4msD2Wju7dhuUCWpFxVv6s/edit?usp=sharing";
+  resumeId.href = resumeUrl;
+  resumeTitle.textContent = "Resume";
 
   //Constants for service headers
   const objHeader = "Object Oriented Programming";
@@ -94,7 +248,7 @@ if (window.location.pathname == "/services.html") {
   outputSeriveParagraph2.textContent = serviceSQL;
   outputSeriveParagraph3.textContent = serviceSystemDev;
 
-  //
+  // Set the html source of the image to the image url
   serviceObjImage.src = ObjImageUrl;
   serviceSQLImage.src = SQLImageUrl;
   serviceSysDevImage.src = sysDevImageUrl;
