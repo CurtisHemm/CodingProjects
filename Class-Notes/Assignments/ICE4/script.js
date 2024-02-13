@@ -42,17 +42,18 @@ $(document).ready(function () {
                 <p>Your registration for the show on ${date} is confirmed.</p>
                 <p>A confirmation email has been sent to: <strong>${email}</strong></p>
                 `
-                ).slideDown();
+                ).slideDown().fadeOut(2000);          //FadeOut for 2 seconds
             });
             $("#signup-form")
                 .find("input[type=text], input[type=email], select").val("");  
+                
         }
     })
 // Form field animations
 $("input, select").focus(function () {
     $(this).animate(
         {
-            borderColor: '#68b3c8'
+            borderColor: "#68b3c8"
         }, 500
     )
 }).blur(function (){
@@ -68,7 +69,7 @@ $("#signup-form input[type=submit").hover(
     function (){
         $(this).animate(
             {
-                backgroundColor: jQuery.Color("#333333"),
+                backgroundColor: "#333333",
             },
             200
         );
@@ -76,7 +77,7 @@ $("#signup-form input[type=submit").hover(
     function (){
         $(this).animate(
             {
-                backgroundColor: jQuery.Color("##5c5c5c"),
+                backgroundColor: "##5c5c5c",
             },
             200
         );
@@ -84,6 +85,21 @@ $("#signup-form input[type=submit").hover(
 )
 
 });
+
+// When the reset bnu
+$("input#btn-reset").click(function (event) {
+    event.preventDefault;
+    let name = "";
+    let email = "";
+    let date = "";
+    console.log(name);
+    console.log(email);
+    console.log(date);
+
+    $("#confirmation-message").hide();
+
+
+})
 
 // ICE 4 TODO:
     //1. Add a "reset" button that clears all inputs and the confirmation message when clicked
