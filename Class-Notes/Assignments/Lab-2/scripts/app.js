@@ -255,3 +255,40 @@ if (window.location.pathname == "/services.html") {
 
 
 }
+
+// If the current window is the login page
+if (window.location.pathname == "/login.html") {
+  
+  // Animate the form appearance
+  $("#registration-form").hide().fadeIn(1500);
+
+  // When the user clicks the submit button
+  $("#signup-form").submit(function (event) {
+    event.preventDefault();
+
+  })
+
+}
+
+// If the current window is the register page
+if (window.location.pathname == "/register.html") {
+  
+  // Animate the form appearance
+  $("#registration-form").hide().fadeIn(1500);
+  // When the user clicks the submit button
+  $("#signup-form").submit(function (event) {
+    event.preventDefault();
+
+    // Get the values for the inputted data
+    let firstName = $("#firstName").val().trim();
+    let lastName = $("#lastName").val().trim();
+    let email = $("email").val().trim();
+    let password = $("password").val().trim();
+    let passwordConfirm = $("passwordConfirm").val().trim();
+
+    // Form validation
+    
+
+  })
+
+}

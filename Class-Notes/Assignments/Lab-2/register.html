@@ -42,16 +42,39 @@
         <a class="nav-link" href="./product.html"><i class="fa-2x">Products</i></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./contact.html"><i class="fa-2x">Contact Us </i></a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" href="./login.html"><i class="fa-2x">Login </i></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="./register.html"><i class="fa-2x">Register <span class="sr-only">(current)</span></i></a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./contact.html"><i class="fa-2x">Contact Us </i></a>
+      </li>
     </ul>
   </div>
 </nav> 
+</br>
+<div id="registration-form">
+  <h1>Login</h1>
+  <form id="signup-form">
+    <label for="name">First Name:</label>
+    <input type="text" id="firstName" name="firstName" autocomplete="off" />
+    </br>
+    <label for="name">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" autocomplete="off" />
+    <br/>
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" autocomplete="off" />     
+    <br/>
+    <label for="password">Password:</label>
+    <input type="text" id="password" name="password" autocomplete="off" />     
+    <br/>
+    <label for="passwordConfirm">Password Confirmation:</label>
+    <input type="text" id="passwordConfirm" name="passwordConfirm" autocomplete="off" />     
+    <br/>
+    <input type="submit" value="Register" />
+  </form>
+  <div id="ErrorMessage"></div>
+</div>
   </body>
 </html>
