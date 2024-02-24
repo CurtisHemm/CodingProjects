@@ -22,7 +22,7 @@ navbarNav.insertBefore(li, navbarNav.lastElementChild);
 //Creating the nav element
 var nav = document.createElement('nav');
 // Setting the classname for nav
-nav.className = 'navbar fixed-bottom navbar-light bg-light';
+nav.className = 'navbar-light bg-light navbar';
 // Creating the div element
 var div = document.createElement('div');
 // Setting the classname for the div
@@ -42,6 +42,18 @@ document.body.appendChild(nav);
 // Changing the the services to interests
 var servicesNavText = document.querySelector('a.nav-link[href="./services.html"]');
 servicesNavText.textContent = 'Interests';
+
+// User class
+class User {
+  constructor(firstName, lastName, email, password, passwordConfirm) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.email = email;
+    this.password = password;
+    this.passwordConfirm = passwordConfirm;
+  }
+}
+
 
 //Contact Script
 // If the user is on the contact page
@@ -266,6 +278,73 @@ if (window.location.pathname == "/login.html") {
   $("#signup-form").submit(function (event) {
     event.preventDefault();
 
+    // Hide the error message 
+    $("#ErrorMessage").hide();
+
+    // Let the isError value be false at the start
+    let isError = false;
+
+    // Get the values for the inputted data
+    let userName = $("#userName").val().trim();
+    let password = $("#password").val().trim();
+
+    // Form Validation
+    // If the first name is empty
+    if(userName == "") {
+      alert("Please enter your username!");
+      isError = true;
+    }
+    // If the last name is empty
+    if(password == ""){
+      alert("Please enter your password!");
+      isError = true;
+    }
+    // If the first name length is less than 2
+    if(userName.length < 5){
+      alert("Username must be at least 5 characters!");
+      isError = true;
+    }
+    // If the last name length is less than 2
+    if(password.length < 6){
+      alert("Password must be at least 6 characters!");
+      isError = true;
+    }
+
+    // If there is an error dispplay the error message
+    if(isError){
+      $("#ErrorMessage").slideUp(function () {
+        $(this)
+          .html(
+            `
+                    <p>Errors detected in your submission</strong>!</p>
+                    <p>Please resubmit form with the the errors mentioned in the alerts fixed</p>
+              `
+          )
+          .slideDown().fadeIn(1000);   // Slide the error message down and fade it in
+      });
+    }
+    // If there is no errors than insert the username before the Contact us in the navbar
+    else{
+
+      // Get the element of the contact 
+      var contactListItem = document.getElementById("contactUs");
+
+      // Make a span element
+      var userNameElement = document.createElement("span");
+
+      // Make the text content of the span element the username
+      userNameElement.textContent = userName;
+
+      // Add it to the navbar 
+      userNameElement.classList.add("nav-link");
+
+      // Insert the username before contact us link
+      contactListItem.parentNode.insertBefore(userNameElement, contactListItem);
+
+      // Reset the form
+      document.getElementById("signup-form").reset();
+    }
+
   })
 
 }
@@ -279,16 +358,82 @@ if (window.location.pathname == "/register.html") {
   $("#signup-form").submit(function (event) {
     event.preventDefault();
 
+    // Hide the error message
+    $("#ErrorMessage").hide();
+
+    // Let the isError value be false at the start
+    let isError = false;
+
     // Get the values for the inputted data
     let firstName = $("#firstName").val().trim();
     let lastName = $("#lastName").val().trim();
-    let email = $("email").val().trim();
-    let password = $("password").val().trim();
-    let passwordConfirm = $("passwordConfirm").val().trim();
+    let email = $("#email").val().trim();
+    let password = $("#password").val().trim();
+    let passwordConfirm = $("#passwordConfirm").val().trim();
 
     // Form validation
-    
+    // If the first name is empty
+    if(firstName == "") {
+      alert("Please enter your first name!");
+      isError = true;
+    }
+    // If the last name is empty
+    if(lastName == ""){
+      alert("Please enter your last name!");
+      isError = true;
+    }
+    // If the first name length is less than 2
+    if(firstName.length < 2){
+      alert("First Name must be at least 2 characters!");
+      isError = true;
+    }
+    // If the last name length is less than 2
+    if(lastName.length < 2){
+      alert("Last Name must be at least 2 characters!");
+      isError = true;
+    }
+    // If the length of the email is less than 8
+    if(email.length < 8){
+      alert("Email must be at least 8 characters!");
+      isError = true;
+    }
+    // If the email doesn't have the '@' symbol
+    if(!email.includes('@')){
+      alert("Email must contain the '@' symbol!");
+      isError = true;
+    }
+    // If the password length is less than 6
+    if(password.length < 6){
+      alert("Password must be at least 6 characters!");
+      isError = true;
+    }
+    // If password and confirmation password aren't the same
+    if(password != passwordConfirm){
+      alert("Password and confirmation password must be the same");
+      isError = true;
+    }
 
+    // If there is an error show the error message box
+    if(isError){
+      $("#ErrorMessage").slideUp(function () {
+        $(this)
+          .html(
+            `
+                    <p>Errors detected in your submission</strong>!</p>
+                    <p>Please resubmit form with the the errors mentioned in the alerts fixed</p>
+              `
+          )
+          .slideDown().fadeIn(1000);   // Slide the error message down and fade it in
+      });
+    }
+
+    // Populate the newUser object 
+    let newUser = new User(firstName, lastName, email, password, password);
+
+    // Console log the newUser object
+    console.log(newUser);
+
+    // Reset the form
+    document.getElementById("signup-form").reset();
   })
-
 }

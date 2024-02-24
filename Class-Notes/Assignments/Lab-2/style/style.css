@@ -10,6 +10,7 @@ Cover is used to cover the entire screen in that image
 
 body {
     background-color: gray !important;
+    height: fit-content;
 }
 
 .navbar-nav .nav-item {
@@ -64,4 +65,8 @@ body {
 
 #signup-form input[type="submit"]:hover {
     background-color: green;
+}
+
+.center {
+    text-align: center;
 }
