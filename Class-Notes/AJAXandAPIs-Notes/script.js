@@ -156,7 +156,7 @@ document.getElementById("searchPokemon").addEventListener("click", async() => {
         statsList = ["Hp: ", "Atk: ", "Def: ", "Sp. Atk: ", "Sp. Def: ", "Speed: "];
         var pokemonStatsOutput = "";
         document.getElementById("pokemonStatsHeading").innerHTML = `<h2>Base Stats of ${pokemon.name}</h2>`;
-        for (i=0; i < 5; i++) {
+        for (i=0; i < 6; i++) {
             pokemonStatsOutput += `<li>${statsList[i]}${pokemon.stats[i].base_stat}</li>`;
         }
         document.getElementById("pokemonStats").innerHTML = pokemonStatsOutput;
