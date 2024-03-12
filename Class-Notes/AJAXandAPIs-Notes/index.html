@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="./script.js"></script>
+    <title>Pokemon API Example</title>
+  </head>
+  <body>
+    <!-- 
+    <h1>Pokemon API Example</h1>
+    <button id="loadPokemon">Load Pokemon</button>
+    <ul id="pokemonList"></ul>
+    -->
+    <div id="pokemon-form">
+      <h1>Enter a pokemon name</h1>
+      <form id="poke-form">
+        <label for="pokeName">Pokemon Name:</label>
+        <input type="text" id="user-input" name="pokeName" autocomplete="off" />
+        <br/>
+        <button id="searchPokemon">Search Pokemon</button>
+      </form>
+      <div id="ErrorMessage"></div>
+    </div>
+    <div id="moveHeading"></div>
+    <ul id="pokemonList"></ul>
+  </br>
+    <div id="pokemonStatsHeading"></div>
+    <ul id="pokemonStats"></ul>
+    <div id="ErrorMessage"></div>
+  </body>
+</html>
