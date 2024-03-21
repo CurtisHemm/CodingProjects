@@ -37,12 +37,26 @@ document.getElementById("loadBlogs").addEventListener("click", function () {
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">${posts.title}</h5>
+                    <img
                     <p class="card-text">${posts.body}</p>
                 </div>
             </div>
         `;
         document.getElementById('twenty-cards').innerHTML += cardCreation;
         });
+    })
+
+    let imageLists = fetch(
+        "https://pixabay.com/api/?key=42944494-fbd60779ac631f173709c01ab&q=yellow+flowers&image_type=photo",
+        {
+            method: "GET",
+        }
+    ).then((response) => {
+        return response.json();
+    }).then((jsonResult) => {
+        let twentyImages = jsonResult.slice(0,20);
+
+        twentyImages.forEach
     })
     
 });
