@@ -76,7 +76,6 @@ body {
     flex-flow: row wrap;
     justify-content: space-between;
     gap: 30px;
-    align-items: baseline;
 }
 
 
