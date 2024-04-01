@@ -5,6 +5,11 @@ A user story is an informal, general explanation of a software feature
 written from the prespective of the end user. (atlassian.com)
 
 1. As a User, I want to be able to Search for a Pokemon
+    1. EJS View - homePage (search form) 
+    2. Router - GET /
+    3. Router - POST /search 
+    4. Controller - searchPokemon(req, res)
+    5. EJS View - displayPokemon
 2. As a User, I want to be able to Save a pokemon to my Saved Collection
 3. As a User, I want to be able to Create my own Pokemons in my Saved Collection
 4. As a User, I want to be able to Update a Pokemon in my Saved Collection

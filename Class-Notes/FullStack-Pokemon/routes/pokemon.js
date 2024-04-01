@@ -5,6 +5,10 @@ const pokemonController = require("../controllers/pokemon");
 
 // app.get("/hello", (req, res) => res.send("hello there"));
 router.get("/hello-pokemon", pokemonController.greetPokemon);
+// Display Home Page
+router.get("/", pokemonController.displayHomePage);
+// Handle incoming HTTP Request from search Form Submission from home page
+router.post("/search", pokemonController.searchPokmeon);
 
 // Share thre router with others
 // CommonJS Syntax
