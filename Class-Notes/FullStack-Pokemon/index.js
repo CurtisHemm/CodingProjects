@@ -1,5 +1,6 @@
 const express = require("express");
 const pokemonRouter = require("./routes/pokemon");
+const homeRouter = require("./routes/home");              // Set the home from the routes folder
 const bodyParser = require("body-parser");
 
 const app = express();
@@ -28,6 +29,7 @@ app.listen(3500, () => {
 
 // In Class Excercise #7 (Due Apirl 2nd):
 // As a User, I want to visit localhost:3500/home and see a blank page with the text "Home Page"
-app.get("/home", function (request, response) {
-    response.send("Home Page");
-});
+// app.get("/home", function (request, response) {
+//     response.send("Home Page");
+// });
+app.use("/", homeRouter);
