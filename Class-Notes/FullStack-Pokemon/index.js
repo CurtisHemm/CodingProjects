@@ -1,9 +1,13 @@
 const express = require("express");
 const pokemonRouter = require("./routes/pokemon");
-const homeRouter = require("./routes/home");              // Set the home from the routes folder
+// const homeRouter = require("./routes/home");              // Set the home from the routes folder
 const bodyParser = require("body-parser");
+const DBConfig = require("./config/database");
 
 const app = express();
+
+// Connect to db
+DBConfig.connectToDatabase();
 
 app.set("views", "./views");
 
@@ -32,4 +36,4 @@ app.listen(3500, () => {
 // app.get("/home", function (request, response) {
 //     response.send("Home Page");
 // });
-app.use("/", homeRouter);
+// app.use("/", homeRouter);

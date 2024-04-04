@@ -10,6 +10,8 @@ router.get("/", pokemonController.displayHomePage);
 // Handle incoming HTTP Request from search Form Submission from home page
 router.post("/search", pokemonController.searchPokmeon);
 
+router.post("/savePokemon", pokemonController.savePokemonToCollection)
+
 // Share thre router with others
 // CommonJS Syntax
 module.exports = router;

@@ -1,3 +1,6 @@
+// We want to import our Pomemon model so that we can communicate with the database
+const Pokemon = require("../models/Pokemon");
+
 function greetPokemon(req, res) {
     // Sample Data logic
     // Fetch pokemon from database
@@ -31,8 +34,31 @@ async function searchPokmeon(req, res) {
 
 }
 
+async function savePokemonToCollection(req, res) {
+    // Grab the form data
+    const formData = req.body;
+    //Create a new pokemon in our database
+
+    try {
+        await Pokemon.create({
+            pokemonId: formData.pokemonId,
+            name: formData.pokemonName,
+            height: formData.pokemonHeight,
+            photo: formData.pokemonPhoto
+        });
+    } catch (err){
+        console.log(`Error in creating pokemon ${formData.pokemonName}`);
+    }
+    res.redirect("/"); // redirect user back to slash route upon completion
+
+
+
+
+}
+
 module.exports = {
     greetPokemon,
     displayHomePage,
     searchPokmeon,
+    savePokemonToCollection,
 };
