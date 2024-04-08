@@ -1,17 +1,23 @@
 const express = require("express");
 const pokemonRouter = require("./routes/pokemon");
-// const homeRouter = require("./routes/home");              // Set the home from the routes folder
+const homeRouter = require("./routes/home");              // Set the home from the routes folder
 const bodyParser = require("body-parser");
 const DBConfig = require("./config/database");
 
 const app = express();
 
+//Load enviroemnt variables
+require("dotenv").config();
+
 // Connect to db
 DBConfig.connectToDatabase();
 
-app.set("views", "./views");
+app.set("views", "./views/partials");
 
 app.set("view engine", "ejs");
+
+// Middleware to register the 'public' folder as a static assest
+app.use(express.static("public"));
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -36,4 +42,10 @@ app.listen(3500, () => {
 // app.get("/home", function (request, response) {
 //     response.send("Home Page");
 // });
-// app.use("/", homeRouter);
+app.use("/", homeRouter);
+
+// ICE 8: Implement the Read all pokemons from saced collection story:
+// 1. Router - Get /pokemonList
+// 2. Controller = getAllPokemons(req, res)
+// 3. EJS - displayMyCollection.ejs
+// A for the button to view the collection, you can add it in the homePage.ejs (for extra points put it in a navbar using EJS partials)

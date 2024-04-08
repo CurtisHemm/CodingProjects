@@ -50,10 +50,31 @@ async function savePokemonToCollection(req, res) {
         console.log(`Error in creating pokemon ${formData.pokemonName}`);
     }
     res.redirect("/"); // redirect user back to slash route upon completion
+}
+
+// ICE 8
+function getAllPokemons(req, res) {
+
+}
+
+async function getMyCollection(req, res) {
+    try {
+        const myCollection = await Pokemon.find({});
+        res.render("mySavedCollection.ejs", {myCollection});
+    } catch (err){
+        console.err("Error with getting saved collection");
+        res.status(500).send("Error in getting saved collection");
+    }
+}
 
 
+async function deletePokemonById(req, res) {
+    try {
+        const id = req.params.idOfPokemon
+        await Pokemon.deleteOne({_id: pokeId});
+    } catch (err) {
 
-
+    }
 }
 
 module.exports = {
@@ -61,4 +82,7 @@ module.exports = {
     displayHomePage,
     searchPokmeon,
     savePokemonToCollection,
+    getAllPokemons,
+    getMyCollection,
+    deletePokemonById,
 };

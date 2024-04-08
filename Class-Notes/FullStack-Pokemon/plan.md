@@ -18,7 +18,13 @@ written from the prespective of the end user. (atlassian.com)
     5. Controller = savePokemonToCollection(req, res)
     6. 
 3. As a User, I want to be able to Create my own Pokemons in my Saved Collection
+    1. Button to navigate to MySavedCollections.ejs
+    2. Router - GET /savedCollection
+    3. Controller - getMyCollection(req, res)
+    4. EJS View - MySavedCollection.ejs
 4. As a User, I want to be able to Update a Pokemon in my Saved Collection
+    1. Button to delete pokemon from savedCollection
+    2. Router - POST(Delete)
 5. As a User, I want to be able to Read the pokemons from my Saved Collection
 6. As a User, I want to be able to Delete a Pokemon from my Saved Collection
 7. As a User, I want to be able to Sign up for a new account 
