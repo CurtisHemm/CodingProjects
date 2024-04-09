@@ -49,3 +49,4 @@ app.use("/", homeRouter);
 // 2. Controller = getAllPokemons(req, res)
 // 3. EJS - displayMyCollection.ejs
 // A for the button to view the collection, you can add it in the homePage.ejs (for extra points put it in a navbar using EJS partials)
+app.use("/pokemonList", pokemonRouter);
