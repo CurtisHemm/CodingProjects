@@ -3,6 +3,7 @@ const pokemonRouter = require("./routes/pokemon");
 const homeRouter = require("./routes/home");              // Set the home from the routes folder
 const bodyParser = require("body-parser");
 const DBConfig = require("./config/database");
+let session = require("express-session");
 
 const app = express();
 
@@ -22,6 +23,24 @@ app.use(express.static("public"));
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+// Create new session
+app.use(session({
+    secret: "pokemon",
+    cookie: {myCookie: "123"},
+}));
+
+// Custom Auth middleware
+app.use(function (req, res, next) {
+    console.log("Custom Auth Middleware");
+    console.log(req.session);
+    if (res.locals.user) {
+        console.log("user is logged in!");
+    } else {
+        res.locals.user = req.session.user;
+    }
+    next();
+});
 
 //app.get("/hello", (req, res) => res.send("hello there"));
 

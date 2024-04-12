@@ -1,8 +1,9 @@
 body {
     background-color: rosybrown;
-    height: 90%;
+    height: fit-content;
+    min-height: 90%;
     width: 100%;
-    margin: 0%;
+    margin: 0;
     padding: 20px;
     position: absolute;
 }
@@ -14,5 +15,17 @@ footer{
 
 .navbar {
     display: flex;
+    text-decoration: none;
+    list-style-type: none;
     
+}
+
+.navbar li {
+    margin: 0 10px 0 10px;
+}
+  
+form {
+display: flex;
+flex-direction: column;
+width: 15%;
 }

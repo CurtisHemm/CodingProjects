@@ -16,7 +16,6 @@ written from the prespective of the end user. (atlassian.com)
     3. Create a form (behaves like a button) in displayPokemon.ejs that says "Add Pokemon my Collection"
     4. Router - POST /savePokemon
     5. Controller = savePokemonToCollection(req, res)
-    6. 
 3. As a User, I want to be able to Create my own Pokemons in my Saved Collection
     1. Button to navigate to MySavedCollections.ejs
     2. Router - GET /savedCollection
@@ -24,11 +23,20 @@ written from the prespective of the end user. (atlassian.com)
     4. EJS View - MySavedCollection.ejs
 4. As a User, I want to be able to Update a Pokemon in my Saved Collection
     1. Button to delete pokemon from savedCollection
-    2. Router - POST(Delete)
+    2. Router - POST(Delete) /deletePokemon/:id
+    3. Controller - deletePokemonById(req,res)
+    4. Redirect back to /savedCollection
 5. As a User, I want to be able to Read the pokemons from my Saved Collection
 6. As a User, I want to be able to Delete a Pokemon from my Saved Collection
 7. As a User, I want to be able to Sign up for a new account 
+    1. EJS View - SignUpPage.ejs (update navbar)
+    2. Router - POST / signup
+    3. Controller - signUpUser(req, res) (redirect to Login Page)
 8. As a User, I want to be able to Log on to an existing account
+    1. EJS View - LoginPage.ejs
+    2. Router - POST /login 
+    3. Controller - loginUser(req, res) (redirect to home page)
+    4. Add Necessary Middleware
 
 ## Requirements
 

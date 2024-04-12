@@ -8,11 +8,18 @@
 </head>
 <body>
 <nav>
-    <ul>
+    <ul class="navbar">
+        <% if (user) { %>
+
+        <li>Welcome <%= user.firstName %></li>   
         <li><a href="/">Home Page</a></li>
         <li><a href="/savedCollection">My Saved Collections</a></li>
+        <% } else { %>
+        <li><a href="/signUp">Sign Up</a></li>
+        <li><a href="/login">Login</a></li>
+        <% }  %>
         <form action="/pokemonList" method="GET">
-        <button>ICE 8 Display All Pokemon</button>
-        </form>
+            <button>ICE 8 Display All Pokemon</button>
+            </form>
     </ul>
 </nav>

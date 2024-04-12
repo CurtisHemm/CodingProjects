@@ -12,12 +12,22 @@ router.post("/search", pokemonController.searchPokmeon);
 
 router.post("/savePokemon", pokemonController.savePokemonToCollection);
 
-// ICE8
+// ICE8 pokemon List
 router.get("/pokemonList", pokemonController.getAllPokemons);
 
 router.get("/savedCollection", pokemonController.getMyCollection);
 
 router.post("/deletePokemon/:idOfPokemon", pokemonController.deletePokemonById);
+
+router.get("/signUp", pokemonController.displaySignUpPage);
+
+router.post("/signUp", pokemonController.signUpUser);
+
+router.post("/login", pokemonController.loginUser);
+
+router.get("/login", pokemonController.displayLoginPage);
+
+router.post("/editPokemon/:idOfPokemon", pokemonController.editPokemonById);   // ICE 9 EDIT POKEMON
 
 // Share thre router with others
 // CommonJS Syntax
