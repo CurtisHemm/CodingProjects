@@ -1,3 +1,5 @@
+//Curtis Hemminghaus, 100874539, 2024-04-18
+
 const express = require("express");
 const animalRouter = require("./routes/animal");   
 const bodyParser = require("body-parser");       
