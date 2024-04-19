@@ -6,7 +6,7 @@ const animalController = require("../controllers/animalControllers");
 // Display Home Page
 router.get("/", animalController.displayHomePage);
 
-// Display animal entry page
+// Display animal collection
 router.get("/savedCollection", animalController.displayAllAnimals);
 
 // Display entry page
