@@ -27,7 +27,7 @@ router.post("/login", pokemonController.loginUser);
 
 router.get("/login", pokemonController.displayLoginPage);
 
-router.post("/editPokemon/:idOfPokemon", pokemonController.editPokemonById);   // ICE 9 EDIT POKEMON
+router.post("/editPokemon/:idOfPokemon", pokemonController.editPokemonById);   
 
 // Share thre router with others
 // CommonJS Syntax

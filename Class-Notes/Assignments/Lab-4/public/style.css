@@ -1,0 +1,74 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: auto;
+}
+
+/* Style form elements */
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Style radio buttons */
+.radio-container {
+    margin-bottom: 10px;
+}
+
+.radio-container label {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.radio-container input[type="radio"] {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+/* Style submit button */
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #5c5c5c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #333333;
+}
+
+nav {
+    display: block;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  /* Style the links inside the nav */
+  nav a {
+    color: #333;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin-right: 10px; /* Add spacing between links */
+  }
+
+  nav li {
+    display: inline-block;
+  }

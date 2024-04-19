@@ -1,0 +1,44 @@
+<%- include('../layouts/main.ejs')%>
+<div class="form-container">
+<form action="/addAnimal" method="POST" class="entryForm"> 
+
+    <label for="zoo">Zoo</label>
+    <input type="text" id="zoo" name="zoo" autocomplete="off" required/><br>
+
+    <label for="scientificName">Scientific Name</label>
+    <input type="text" id="scientificName" name="scientificName" autocomplete="off" required/><br>
+
+    <label for="commonName">Common Name</label>
+    <input type="text" id="commonName" name="commonName" autocomplete="off" required/><br>
+
+    <label for="givenName">GivenName</label>
+    <input type="text" id="givenName" name="givenName" autocomplete="off" required/><br>
+
+    <div id="radio-container">
+    <label for="gender">Gender:</label>
+    <input type="radio" id="male" name="gender" value="male" required>
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female" required>
+    <label for="female">Female</label>
+</div>
+    
+
+    <label for="dateOfBirth">Date Of Birth: </label>
+    <input type="date" id="dateOfBirth" name="dateOfBirth" required/><br>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required/><br>
+
+    <div id="radio-container">
+    <label for="isTransportable">Is Transportable</label>
+    <input type="radio" id="true" name="isTransportable" value="true" required>
+    <label for="true">True</label>
+    <input type="radio" id="false" name="isTransportable" value="false" required>
+    <label for="false">False</label>
+    <input type="submit" value="Add new Animal" />
+</div>
+
+</form>
+</div>
+
+<%- include('../layouts/footer.ejs')%>

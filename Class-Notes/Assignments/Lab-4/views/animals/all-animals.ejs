@@ -1,0 +1,32 @@
+<%- include('../layouts/main.ejs')%>
+
+<ul>
+    <% myCollection.forEach(Animal => { %>
+    
+    <li>
+        <h3>Zoo: <%= Animal.Zoo %></h3>
+        <h3>Scientific Name: <%= Animal.ScientificName %></h3>
+        <h3>Common Name: <%= Animal.CommonName %></h3>
+        <h3>Given Name: <%= Animal.GivenName %></h3>
+        <h3>Gender: <%= Animal.Gender %></h3>
+        <h3>Date Of Birth: <%= Animal.DateOfBirth %></h3>
+        <h3>Age: <%= Animal.Age %></h3>
+        <h3>IsTransportable: <%= Animal.IsTransportable %></h3>
+        <form action="/editAnimal/<%= Animal._id %>" method="GET">
+            <input type="hidden" value="<%= Animal.Zoo %>" name="animalZoo" />
+            <input type="hidden" value="<%= Animal.ScientificName %>" name="animalSciName" />
+            <input type="hidden" value="<%= Animal.CommonName %>" name="animalComName" />
+            <input type="hidden" value="<%= Animal.GivenName %>" name="animalGivName" />
+            <input type="hidden" value="<%= Animal.Gender %>" name="animalGender" />
+            <input type="hidden" value="<%= Animal.DateOfBirth %>" name="animalDateOfBirth" />
+            <input type="hidden" value="<%= Animal.Age %>" name="animalAge" />
+            <input type="hidden" value="<%= Animal.IsTransportable %>" name="animalIsTransportable" />
+            <input type="submit" value="Edit Animal" />
+        </form>
+        
+    </li>
+    
+    <% }) %>
+    </ul>
+
+    <%- include('../layouts/footer.ejs')%>

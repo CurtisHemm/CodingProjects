@@ -1,0 +1,48 @@
+<%- include('../layouts/main.ejs')%>
+
+<h1>Edit Animal</h1>
+<div class="form-container">
+    <form action="/editAnimal/<%= animal._id %>" method="POST">
+        <label for="animalZoo">Zoo:</label>
+        <input type="text" id="animalZoo" name="animalZoo" value="<%= animal.Zoo %>"><br>
+
+        <label for="animalScientificName">Scientific Name:</label>
+        <input type="text" id="animalScientificName" name="animalScientificName" value="<%= animal.ScientificName %>"><br>
+
+        <label for="animalCommonName">Common Name:</label>
+        <input type="text" id="animalCommonName" name="animalCommonName" value="<%= animal.CommonName %>"><br>
+
+        <label for="animalGivenName">Given Name:</label>
+        <input type="text" id="animalGivenName" name="animalGivenName" value="<%= animal.GivenName %>"><br>
+
+        <div id="radio-container">
+        <label for="animalGender">Gender:</label><br>
+        <input type="radio" id="male" name="animalGender" value="Male" <%= animal.Gender === "Male" ? 'checked' : '' %>>
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="animalGender" value="Female" <%= animal.Gender === "Female" ? 'checked' : '' %>>
+        <label for="female">Female</label><br>
+        </div>
+
+        <label for="animalDateOfBirth">Date Of Birth:</label>
+        <input type="text" id="animalDateOfBirth" name="animalDateOfBirth" value="<%= animal.DateOfBirth %>"><br>
+
+        <label for="animalAge">Age:</label>
+        <input type="text" id="animalAge" name="animalAge" value="<%= animal.Age %>"><br>
+
+        <div id="radio-container">
+        <label for="animalIsTransportable">Is Transportable:</label><br>
+        <input type="radio" id="yes" name="animalIsTransportable" value="true" <%= animal.IsTransportable ? 'checked' : '' %>>
+        <label for="yes">Yes</label><br>
+        <input type="radio" id="no" name="animalIsTransportable" value="false" <%= !animal.IsTransportable ? 'checked' : '' %>>
+        <label for="no">No</label><br>
+    </div>
+
+        <input type="submit" value="Save Changes">
+    </form>
+    <br>
+    <form action="/deleteAnimal/<%= animal._id %>" method="POST">
+        <input type="submit" value="Delete Animal">
+    </form>
+</div>
+
+    <%- include('../layouts/footer.ejs')%>
